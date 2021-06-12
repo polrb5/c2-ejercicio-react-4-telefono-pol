@@ -1,8 +1,13 @@
-export const Info = () => {
+export const Info = (props) => {
+  const { BotonLlamarActivo, botonLlamar } = props;
   return (
     <>
-      {/* <!-- El siguiente elemento se oculta añadiéndole la clase "off" --> */}
-      <span className="mensaje">Llamando...</span>
+      <span
+        className={`mensaje${botonLlamar ? " off" : ""}`}
+        onClick={BotonLlamarActivo}
+      >
+        Llamando...
+      </span>
     </>
   );
 };

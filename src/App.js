@@ -8,6 +8,7 @@ function App() {
   // const phoneNumbers = numbers;
   const phoneNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   const [numberDisplay, setNumberDisplay] = useState("");
+  const [botonLlamar, setBotonLlamar] = useState(true);
   // const [botonTelefono, setBotonTelefono] = useState(true)
   const printNumber = (number) => {
     if (numberDisplay.length === 9) {
@@ -18,17 +19,21 @@ function App() {
   const clearNumber = () => {
     setNumberDisplay("");
   };
+  const botonLlamarActivo = () => setBotonLlamar(!botonLlamar);
 
   return (
     <div className="contenedor">
-      <Info />
+      <Info botonLlamarActivo={botonLlamarActivo} botonLlamar={botonLlamar} />
       <main className="telefono">
         <Teclado
           phoneNumbers={phoneNumbers}
           printNumber={printNumber}
           clearNumber={clearNumber}
         />
-        <Acciones numberDisplay={numberDisplay} />
+        <Acciones
+          numberDisplay={numberDisplay}
+          botonLlamarActivo={botonLlamarActivo}
+        />
       </main>
     </div>
   );
