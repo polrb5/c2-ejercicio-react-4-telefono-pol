@@ -8,7 +8,12 @@ function App() {
   // const phoneNumbers = numbers;
   const phoneNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   const [numberDisplay, setNumberDisplay] = useState("");
-  const printNumber = (number) => setNumberDisplay(numberDisplay + number);
+  const printNumber = (number) => {
+    if (numberDisplay.length === 9) {
+      return;
+    }
+    setNumberDisplay(numberDisplay + number);
+  };
   const clearNumber = () => {
     setNumberDisplay("");
   };
