@@ -1,17 +1,24 @@
 export const Accion = (props) => {
-  const { numberDisplay } = props;
+  const { numberDisplay, botonLlamar, botonLlamarActivo } = props;
   return (
     <>
-      <a
+      <button
         href="llamar"
-        className={`llamar${numberDisplay.length === 9 ? " activo" : ""}`}
+        className={`llamar${numberDisplay.length === 9 ? " activo" : ""}${
+          botonLlamar ? "" : " off"
+        }`}
+        onClick={botonLlamarActivo}
       >
         Llamar
-      </a>
+      </button>
       {/* <!-- Sólo se tiene que ver un botón u otro --> */}
-      <a href="colgar" className="colgar activo">
+      <button
+        href="colgar"
+        className={`${botonLlamar ? "off" : "colgar activo"}`}
+        onClick={botonLlamarActivo}
+      >
         Colgar
-      </a>
+      </button>
     </>
   );
 };

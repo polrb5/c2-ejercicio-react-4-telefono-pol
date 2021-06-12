@@ -17,7 +17,7 @@ function App() {
     setNumberDisplay(numberDisplay + number);
   };
   const clearNumber = () => {
-    setNumberDisplay("");
+    setNumberDisplay(numberDisplay.slice(0, -1));
   };
   const botonLlamarActivo = () => setBotonLlamar(!botonLlamar);
 
@@ -33,6 +33,7 @@ function App() {
         <Acciones
           numberDisplay={numberDisplay}
           botonLlamarActivo={botonLlamarActivo}
+          botonLlamar={botonLlamar}
         />
       </main>
     </div>
