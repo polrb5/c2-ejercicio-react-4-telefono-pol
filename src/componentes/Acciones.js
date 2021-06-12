@@ -8,7 +8,7 @@ export const Acciones = (props) => {
       <Display numberDisplay={numberDisplay} />
       {/* <!-- El botón de llamar debe tener la clase "activo" cuando --> */}
       {/* <!-- el número de teléfono tiene 9 cifras --> */}
-      <Accion />
+      <Accion numberDisplay={numberDisplay} />
     </div>
   );
 };
