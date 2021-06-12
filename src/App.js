@@ -1,58 +1,27 @@
+import { useState } from "react";
+import { Acciones } from "./componentes/Acciones";
+import { Info } from "./componentes/Info";
+import { Teclado } from "./componentes/Teclado";
+
 function App() {
+  // const [numbers, setNumbers] = useState(1, 2, 3, 4, 5, 6, 7, 8, 9, 0);
+  // const phoneNumbers = numbers;
+  const phoneNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  const [numberDisplay, setNumberDisplay] = useState("");
+  const printNumber = (number) => setNumberDisplay(numberDisplay + number);
+  const clearNumber = () => {
+    setNumberDisplay("");
+  };
   return (
     <div className="contenedor">
-      {/* <!-- El siguiente elemento se oculta añadiéndole la clase "off" --> */}
-      <span className="mensaje">Llamando...</span>
+      <Info />
       <main className="telefono">
-        <div className="botones">
-          <ol className="teclado">
-            <li>
-              <button>1</button>
-            </li>
-            <li>
-              <button>2</button>
-            </li>
-            <li>
-              <button>3</button>
-            </li>
-            <li>
-              <button>4</button>
-            </li>
-            <li>
-              <button>5</button>
-            </li>
-            <li>
-              <button>6</button>
-            </li>
-            <li>
-              <button>7</button>
-            </li>
-            <li>
-              <button>8</button>
-            </li>
-            <li>
-              <button>9</button>
-            </li>
-            <li>
-              <button>0</button>
-            </li>
-            <li>
-              <button className="big">borrar</button>
-            </li>
-          </ol>
-        </div>
-        <div className="acciones">
-          <span className="numero">667359961</span>
-          {/* <!-- El botón de llamar debe tener la clase "activo" cuando --> */}
-          {/* <!-- el número de teléfono tiene 9 cifras --> */}
-          <a href="#" className="llamar">
-            Llamar
-          </a>
-          {/* <!-- Sólo se tiene que ver un botón u otro --> */}
-          <a href="#" className="colgar activo">
-            Colgar
-          </a>
-        </div>
+        <Teclado
+          phoneNumbers={phoneNumbers}
+          printNumber={printNumber}
+          clearNumber={clearNumber}
+        />
+        <Acciones numberDisplay={numberDisplay} />
       </main>
     </div>
   );
