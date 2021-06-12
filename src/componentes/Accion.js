@@ -8,6 +8,7 @@ export const Accion = (props) => {
           botonLlamar ? "" : " off"
         }`}
         onClick={botonLlamarActivo}
+        disabled={numberDisplay.length === 9 ? false : true}
       >
         Llamar
       </button>

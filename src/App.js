@@ -19,7 +19,15 @@ function App() {
   const clearNumber = () => {
     setNumberDisplay(numberDisplay.slice(0, -1));
   };
-  const botonLlamarActivo = () => setBotonLlamar(!botonLlamar);
+
+  const botonLlamarActivo = () => {
+    if (botonLlamar) {
+      setBotonLlamar(false);
+    } else if (!botonLlamar) {
+      setNumberDisplay("");
+      setBotonLlamar(true);
+    }
+  };
 
   return (
     <div className="contenedor">
