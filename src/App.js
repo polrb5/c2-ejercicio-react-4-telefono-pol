@@ -22,10 +22,13 @@ function App() {
 
   const botonLlamarActivo = () => {
     if (botonLlamar) {
+      setTimeout(() => {
+        setBotonLlamar(true);
+        setNumberDisplay("");
+      }, 5000);
       setBotonLlamar(false);
     } else if (!botonLlamar) {
       setNumberDisplay("");
-      setBotonLlamar(true);
     }
   };
 
