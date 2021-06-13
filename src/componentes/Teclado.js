@@ -1,7 +1,7 @@
 import { Tecla } from "./Tecla";
 
 export const Teclado = (props) => {
-  const { phoneNumbers, printNumber, clearNumber } = props;
+  const { phoneNumbers, printNumber, clearNumber, numberDisplay } = props;
   return (
     <div className="botones">
       <ol className="teclado">
@@ -9,6 +9,7 @@ export const Teclado = (props) => {
           phoneNumbers={phoneNumbers}
           printNumber={printNumber}
           clearNumber={clearNumber}
+          numberDisplay={numberDisplay}
         />
       </ol>
     </div>

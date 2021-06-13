@@ -29,6 +29,7 @@ function App() {
       setBotonLlamar(false);
     } else if (!botonLlamar) {
       setNumberDisplay("");
+      setBotonLlamar(true);
     }
   };
 
